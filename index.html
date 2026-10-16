@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Boosfer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <ul class="menu">
+    <li class="menu-li"><a href="index.html">Read me</a></li>
+    <li class="menu-li"><a href="first.html">BINGO</a></li>
+    <li class="menu-li"><a href="cred.html">Credits</a></li>
+  </ul>
+</header>
+
+<p class="textShow" id="typewriter-text">
+    <span class="text-line">do you like a good bingo game?<br></span><br>
+    <span class="text-line">5 by 5 board, neat little frame?<br></span><br>
+    <span class="text-line">tick off a tiny square with each task done<br></span><br>
+    <span class="text-line">minecraft, elden ring, bingo's always fun<br></span><br>
+    <span class="text-line">so we made a board for you to try out, grandpa<br></span><br>
+    <span class="text-line">but wait! what's a bingo match without a... <a href="first.html" style=" color: red;">gamba</a><br></span><br>
+</p>
+
+<div id="imageModal" class="modal">
+	<span class="close" onclick="closeModal()">&times;</span>
+	<div class="modal-title" id="modalTitle"></div>
+	<div class="modal-content-wrapper" id="modalWrapper">
+		<div class="modal-image-container" id="imageContainer">
+			<img class="modal-content" id="modalImage">
+		</div>
+	</div>
+	<div class="zoom-info" id="zoomInfo">Scale: 100%</div>
+	<div class="zoom-controls">
+		<button class="zoom-btn" onclick="zoomOut()">−</button>
+		<button class="zoom-btn" onclick="resetZoom()">⟲</button>
+		<button class="zoom-btn" onclick="zoomIn()">+</button>
+	</div>
+</div>
+
+<script>
+    window.addEventListener('load', () => {
+        startTextAnimation();
+    });
+
+    function startTextAnimation() {
+        const lines = document.querySelectorAll('.text-line');
+        let delay = 0;
+        const lineDelay = 3000;
+        const fadeDuration = 1000;
+
+        lines.forEach((line) => {
+            line.style.opacity = '0';
+            line.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+            
+            setTimeout(() => {
+                line.style.opacity = '1';
+            }, delay);
+
+            delay += lineDelay;
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+body {
+	background-color: #beee9c;
+	background-image: url("8ba8866236b0ca55.png");
+	background-repeat: repeat;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	min-height: 100vh;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 3000;
+	background-color: #000000;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	width: 100%;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+	margin: 0;
+	padding: 10px 20px;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu-li {
+	margin: 0 15px;
+}
+
+.menu-li a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	font-size: 1.1em;
+	display: flex;
+	align-items: center;
+}
+
+.credits-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 80px);
+}
+
+h1 {
+    color: #20510e;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.textShow {
+  font-size: 24px;
+  line-height: 1.67;
+  color: #20510e;
+  text-align: center;
+  max-width: 800px;
+}
+
+.text-line {
+    display: inline-block;
+    opacity: 0;
+}
+
+.orgM, .artM {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    opacity: 0;
+}
+
+.liM, .liA {
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #2b4c05;
+}
+
+.specialClub {
+    margin-top: 50px;
+}
+
+.secretBtn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: #8abe29;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    opacity: 0;
+}
+
+.secretBtn:hover {
+    color: #000000;
+    background: #baff3a;
+    transform: translateY(-2px);
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 3000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.95);
+	animation: fadeIn 0.3s ease;
+	overflow: hidden;
+}
+
+.modal-content-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: auto;
+}
+
+.modal-image-container {
+	position: relative;
+	transform-origin: center center;
+	transition: transform 0.3s ease;
+	cursor: grab;
+}
+
+.modal-image-container:active {
+	cursor: grabbing;
+}
+
+.modal-content {
+	max-width: 90vw;
+	max-height: 85vh;
+	border-radius: 0px;
+	user-select: none;
+	pointer-events: none;
+}
+
+.close {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	color: #f1f1f1;
+	font-size: 7em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: color 0.3s;
+	z-index: 3001;
+}
+
+.close:hover {
+	color: #baff3a;
+}
+
+.zoom-controls {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+	z-index: 3001;
+}
+
+.nav-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 3001;
+    pointer-events: none;
+}
+
+.nav-btn {
+    pointer-events: auto;
+    background: rgba(127, 211, 59, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-btn:hover {
+    background: rgba(139, 255, 100, 0.8);
+}
+
+.zoom-btn {
+	padding: 10px 20px;
+	font-size: 1.2em;
+	background: rgba(255, 255, 255, 0.2);
+	color: white;
+	border: 2px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.zoom-btn:hover {
+	background: rgba(255, 255, 255, 0.4);
+	transform: scale(1.1);
+}
+
+.modal-title {
+	position: absolute;
+	top: 20px;
+	left: 40px;
+	color: white;
+	font-size: 1.5em;
+	font-weight: bold;
+	z-index: 3001;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.zoom-info {
+	position: absolute;
+	bottom: 80px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	font-size: 1em;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 5px 15px;
+	border-radius: 5px;
+	z-index: 3001;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
