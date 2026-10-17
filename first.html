@@ -31,6 +31,7 @@
       <h1 id="congrats-header">SPECIAL GIFTS</h1>
       <p class="congrats-desc-animate">from some of the friends and buddies that you hold true </p>
       <p class="congrats-desc-animate delay-1">who took time to draw a little something for you</p>
+      <p class="congrats-desc-animate delay-1" #71d14e><a href="cred.html" style=" color: #a1ff7f;">[CREDITS - click when you're done viewing!]</a></p>
       
       <div class="slider-container">
         <button class="slider-btn prev-btn" onclick="moveSlider(-1)">&#10094;</button>
@@ -51,9 +52,6 @@
 
         <div class="button-group">
           <button id="spinButton" onclick="spin()">SPIN</button>
-          <button id="skipButton" onclick="skipToSecret()">
-            SKIP TO SECRET GREEN
-          </button>
         </div>
 
         <div id="result"></div>
@@ -144,7 +142,7 @@
       ];
 
       var cardImages = [
-        "", "fanartists/morify.png", "fanartists/enaluuvs.png", "fanartists/fizzu.png", "fanartists/cuspid.png", "fanartists/skybird.png", "fanartists/hammermanegoBrian.jpg", "fanartists/zee.jpg", "fanartists/dmi__tri.png", "fanartists/nyami_willow.png", "fanartists/rattnappynap.jpg", "fanartists/lilswakeup.png", "fanartists/rey.png", "fanartists/hippo.png", "fanartists/lisya.png", "fanartists/toria.png", "fanartists/apple.png", "fanartists/qusey.png", "fanartists/nightmareishigh.png", "fanartists/just_1heo.jpg", "fanartists/mictiankity.png", "fanartists/atlas.png", "rib.jpg", "fanartists/neptune.jpg", "fanartists/rabanal.png", "fanartists/lemi.jpg", "question.png"
+        "", "fanartists/morify.png", "fanartists/enaluuvs.png", "fanartists/fizzu.png", "fanartists/cuspid.png", "fanartists/skybird.png", "fanartists/hammermanegoBrian.jpg", "fanartists/zee.jpg", "fanartists/dmi__tri.png", "fanartists/nyami_willow.png", "fanartists/rattnappynap.jpg", "fanartists/lilswakeup.png", "fanartists/rey.png", "fanartists/hippo.png", "fanartists/lisya.png", "fanartists/toria.png", "fanartists/apple.png", "fanartists/qusey.png", "fanartists/nightmareishigh.png", "fanartists/just_1heo.jpg", "fanartists/mictiankity.png", "fanartists/atlas.png", "fanartists/mintrea.png", "fanartists/neptune.jpg", "fanartists/rabanal.png", "fanartists/lemi.jpg", "question.png"
       ];
 
       var cardData = [
@@ -498,7 +496,7 @@
         });
       }
 
-      function skipToSecret() {
+       function skipToSecret() {
         for (var i = 1; i <= 25; i++) {
           if (!unlockedCards.has(i)) {
             unlockedCards.add(i);
